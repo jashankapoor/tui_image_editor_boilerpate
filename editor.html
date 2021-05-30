@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<title>Editor</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+		<link type="text/css" href="./assets/css/tui-color-picker.css" rel="stylesheet">
+                <link type="text/css" href="./assets/css//tui-image-editor.css" rel="stylesheet">
+                <link type="text/css" href="./assets/css/editor_css.css" rel="stylesheet">
+
+
+
+
+	</head>
+	<body>
+		 <div id="tui-image-editor-container"></div>
+
+
+		               <script type="text/javascript" src="./assets/js/fabric-v4.2.0.js"></script>
+
+                        <script type="text/javascript" src="./assets/js/tui-code-snippet.min.js"></script>
+			<script type="text/javascript" src="./assets/js/tui-color-picker.js"></script>
+			<script type="text/javascript" src="./assets/js/tui-image-editor.js"></script>  
+                        <script type="text/javascript" src="./assets/js/FileSaver.min.js"></script>
+                        <script type="text/javascript" src="./assets/js/white-theme.js"></script>
+                        <script type="text/javascript" src="./assets/js/black-theme.js"></script>
+
+
+
+		<script>
+      // Image editor
+      var imageEditor = new tui.ImageEditor('#tui-image-editor-container', {
+        includeUI: {
+          loadImage: {
+            path: 'https://source.unsplash.com/featured?apparel',
+            name: 'SampleImage',
+          },
+          theme: blackTheme, // or whiteTheme
+          initMenu: 'filter',
+          menuBarPosition: 'bottom',
+        },
+        cssMaxWidth: 800,
+        cssMaxHeight: 700,
+        usageStatistics: false,
+      });
+      window.onresize = function () {
+        imageEditor.ui.resizeEditor();
+      };
+    </script>
+	</body>
+
+
+
+</html>
+
+
